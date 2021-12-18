@@ -1,6 +1,6 @@
 # Image Reflection Removal based onKnowledge-distilling Content Disentanglement
 
-**Yan-Tsung Peng, Kai-Han Cheng, I-Sheng Fang, and Wen-Yi Peng** <br>
+**Yan-Tsung Peng, Kai-Han Cheng, I-Sheng Fang, Wen-Yi Peng, and Jr-Shian Wu** <br>
 <br>
 ## **Abstract:** <br>
 
