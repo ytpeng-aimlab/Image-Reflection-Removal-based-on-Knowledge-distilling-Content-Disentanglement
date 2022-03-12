@@ -1,4 +1,4 @@
-# Image Reflection Removal based on Knowledge-distilling Content Disentanglement
+# Image Reflection Removal based on Knowledge-distilling Content Disentanglement, **IEEE Signal Processing Letters**, 2022
 
 <br>
 ## **Abstract:** <br>
