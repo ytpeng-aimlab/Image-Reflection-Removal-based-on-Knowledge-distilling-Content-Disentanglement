@@ -9,6 +9,7 @@ import os
 from tqdm import tqdm
 import numpy as np
 import matplotlib.pyplot as plt
+from natsort import natsorted
 
 # -
 
@@ -62,13 +63,15 @@ class datasets( Dataset ):
         
         self.path = os.path.join( self.root_dir , self.img_folder )
         self.img_path = os.listdir( self.path )
+        self.img_path = natsorted(self.img_path)
         #self.img_path = sort(self.img_path)
         
         self.Gt_path = os.path.join( self.root_dir , self.Gt_img_folder )
         self.Gt_img_path = os.listdir( self.Gt_path )
+        self.Gt_img_path = natsorted(self.Gt_img_path)
         #self.Gt_img_path = sort(self.Gt_path)
-        self.Gt_img_path.sort()
-        self.img_path.sort()
+        # self.Gt_img_path.sort()
+        # self.img_path.sort()
         
         #self.crop = RandomCrop(224)
         self.transforms = transforms
@@ -78,6 +81,7 @@ class datasets( Dataset ):
         self.Gt_images = []
         
         for f_name in tqdm(self.img_path):
+            # print(f_name)
             with open( os.path.join(self.path , f_name ) , "rb") as f:
                 self.images.append(  np.array( Image.open( f ).convert('RGB') ) )
         for f_name in tqdm(self.Gt_img_path):
@@ -136,5 +140,3 @@ class datasets( Dataset ):
 # +
 #plt.imshow(np.transpose( np.clip( train_dataset[14200][1].numpy() , 0 , 1 ) , (1, 2, 0 ) ))
 # -
-
-
